@@ -6,6 +6,8 @@
     --fourth-color: #F8F8F8;
     --fifth-color: #F2F2F2;
     --sixth-color: blue;
+    --seventh-color: #587291;
+    --eighth-color: #5B2E48;
     --font-family: 'Open Sans', sans-serif;
     /* --font-size-base: 16px; */
 
@@ -72,8 +74,8 @@ a {
     /* min-height: calc(85vh/var(--viewportheight)*100); */
     /* min-height: calc(85rem/16); */
     /* (85/2)-16=26.5px */
-    padding-top: calc(26.5vh/var(--viewportheight)*100);
-    padding-bottom: calc(26.5vh/var(--viewportheight)*100);
+    padding-top: min(calc(26.5vh/var(--viewportheight)*100), calc(26.5rem/16));
+    padding-bottom: min(calc(26.5vh/var(--viewportheight)*100), calc(26.5rem/16));
     color:var(--blackish-color);
     text-decoration: none;
     vertical-align: middle;
@@ -86,4 +88,32 @@ a:hover {
 
 a:visited {
     color: var(--blackish-color);
+}
+
+main {
+    background-color:var(--seventh-color);
+    text-align: center;
+}
+
+main p {
+    /* choosing almost white even though I know it is #FFFFFF in Figma */
+    /* approx 21px padding below, approx 142px padding above */
+    color: var(--fourth-color);
+    font-size: var(--font-size-2xl);
+    padding-top: min(calc(142vh/var(--viewportheight)*100), calc(142rem/16));
+    padding-bottom: min(calc(21vh/var(--viewportheight)*100), calc(21rem/16));
+}
+
+button {
+    /* choosing almost white even though I know it is #FFFFFF in Figma */
+    /* 67px height, 216px wide, approx padding top/bottom 10px sides 14px */
+    /* 140px margin below */
+    padding-top: min(calc(10vh/var(--viewportheight)*100), calc(10rem/16));
+    padding-bottom: min(calc(10vh/var(--viewportheight)*100), calc(10rem/16));
+    padding-left: min(0.9648vw, calc(14rem / 16));
+    padding-right: min(0.9648vw, calc(14rem / 16));
+    color: var(--fourth-color);
+    font-size: var(--font-size-xl);
+    background-color: var(--eighth-color);
+    margin-bottom: min(calc(140vh/var(--viewportheight)*100), calc(140rem/16));
 }
