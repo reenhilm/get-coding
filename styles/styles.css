@@ -104,12 +104,12 @@ a:visited {
     color: var(--blackish-color);
 }
 
-main {
+section {
     background-color:var(--seventh-color);
     text-align: center;
 }
 
-main p {
+section h1 {
     /* choosing almost white even though I know it is #FFFFFF in Figma */
     /* approx 21px*3 padding below, approx 142px*3 padding above */
     color: var(--fourth-color);
