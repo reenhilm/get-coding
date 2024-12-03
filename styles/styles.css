@@ -35,9 +35,15 @@ html {
 body {
     font-size: var(--font-size-default);
     font-family: 'Roboto', sans-serif;
+    background-color: var(--fourth-color);
 }
 
 nav {
+    background-color: var(--fourth-color);
+    display: flex;
+}
+
+header nav {
     /* viewport in figma was 1451px wide */
     /* this element should be height 85px, margin 31px in Figma by that viewport size */
     /* 85/16=5.3125rem, 31/16=1.9375rem */
@@ -45,13 +51,21 @@ nav {
     /* 31/1451*100=2.1365vw */
     margin-left: min(2.1365vw, calc(31rem / 16));
     margin-right: min(2.1365vw, calc(31rem / 16));
-    background-color: var(--fourth-color);
     border: 1px solid var(--fifth-color);
     /* spread must be in px according to w3schools */
     filter: drop-shadow(calc(1rem / 16) calc(1rem / 16) 1px #DCDCDC);
-    display: flex;
     justify-content: center;
     gap:min(7.5120vw, calc(109rem/16));
+}
+
+footer nav {
+    font-size: var(--font-size-xl);
+    justify-content:flex-end;
+
+    /* if 10px-font on Figma is 30px font, then margin 9px should be 27px */
+    gap: min(1.7521vw, calc(27rem/16));
+    /* 40px from right */
+    margin:min(2.5957vw, calc(40rem/16));
 }
 
 header {
@@ -59,7 +73,7 @@ header {
     
         /* padding-top:calc(70rem / 16); */
         /* 70/668px*100=10.4790 */
-    padding-top: 10.4790vh;
+    padding-top: min(calc(70vh/var(--viewportheight)*100), calc(70rem/16));
 
     /* since this is an image all the pixels should be shown */
     height: calc(930rem/16);
@@ -97,23 +111,23 @@ main {
 
 main p {
     /* choosing almost white even though I know it is #FFFFFF in Figma */
-    /* approx 21px padding below, approx 142px padding above */
+    /* approx 21px*3 padding below, approx 142px*3 padding above */
     color: var(--fourth-color);
     font-size: var(--font-size-2xl);
-    padding-top: min(calc(142vh/var(--viewportheight)*100), calc(142rem/16));
-    padding-bottom: min(calc(21vh/var(--viewportheight)*100), calc(21rem/16));
+    padding-top: min(calc(426vh/var(--viewportheight)*100), calc(426rem/16));
+    padding-bottom: min(calc(63vh/var(--viewportheight)*100), calc(63rem/16));
 }
 
 button {
     /* choosing almost white even though I know it is #FFFFFF in Figma */
-    /* 67px height, 216px wide, approx padding top/bottom 10px sides 14px */
-    /* 140px margin below */
-    padding-top: min(calc(10vh/var(--viewportheight)*100), calc(10rem/16));
-    padding-bottom: min(calc(10vh/var(--viewportheight)*100), calc(10rem/16));
-    padding-left: min(0.9648vw, calc(14rem / 16));
-    padding-right: min(0.9648vw, calc(14rem / 16));
+    /* 67px height, 216px wide, approx padding top/bottom 10px*3 sides 14px*3 */
+    /* 140px*3 margin below */
+    padding-top: min(calc(30vh/var(--viewportheight)*100), calc(30rem/16));
+    padding-bottom: min(calc(30vh/var(--viewportheight)*100), calc(30rem/16));
+    padding-left: min(2.7255vw, calc(42rem / 16));
+    padding-right: min(2.7255vw, calc(42rem / 16));
     color: var(--fourth-color);
     font-size: var(--font-size-xl);
     background-color: var(--eighth-color);
-    margin-bottom: min(calc(140vh/var(--viewportheight)*100), calc(140rem/16));
+    margin-bottom: min(calc(420vh/var(--viewportheight)*100), calc(420rem/16));
 }
