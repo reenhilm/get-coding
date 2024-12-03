@@ -1,7 +1,7 @@
 /* Deklarera CSS-variabler i :root */
 :root {
     --blackish-color: #101212;
-    --secondary-color: #FCFCFC;
+    --secondary-color: blue;
     --third-color: 161, 0, 0;
     --fourth-color: #EBEBEB;
     --fifth-color: #A10000;
@@ -27,17 +27,10 @@ html {
 
 body {
     font-size: var(--font-size-default);
+    font-family: 'Roboto', sans-serif;
 }
 
-article {
-    background-color: lightgray;
-    /* padding 70px */
-    padding-top: 10.4790vh;
-    /* padding-top:calc(70rem / 16); */
-    /* 70/668px*100=10.4790 */
-}
-
-header {
+nav {
     /* viewport in figma was 1451px wide */
     /* this element should be height 85px, margin 31px in Figma by that viewport size */
     /* 85/16=5.3125rem, 31/16=1.9375rem */
@@ -51,5 +44,34 @@ header {
     display: flex;
     justify-content: center;
     outline: 2px solid green;
-    gap:109px;
+    gap:min(7.5120vw, calc(109rem/16));
+}
+
+header {
+    /* padding 70px */
+    
+        /* padding-top:calc(70rem / 16); */
+        /* 70/668px*100=10.4790 */
+    padding-top: 10.4790vh;
+    height: calc(930rem/16);
+    background-image: url("/images/headerbackground2000x1282.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position-y: top;
+    background-position: center;
+    outline:2px solid hotpink;
+}
+
+a {
+    color:var(--blackish-color);
+    text-decoration: none;
+}
+
+a:hover {
+    color:var(--secondary-color);
+    text-decoration: underline;
+}
+
+a:visited {
+    color: var(--blackish-color);
 }
