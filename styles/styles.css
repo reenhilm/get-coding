@@ -3,8 +3,9 @@
     --blackish-color: #101212;
     --secondary-color: blue;
     --third-color: 161, 0, 0;
-    --fourth-color: #EBEBEB;
-    --fifth-color: #A10000;
+    --fourth-color: #F8F8F8;
+    --fifth-color: #F2F2F2;
+    --sixth-color: blue;
     --font-family: 'Open Sans', sans-serif;
     /* --font-size-base: 16px; */
 
@@ -16,6 +17,10 @@
 
     /* 36px */
     --font-size-2xl: calc(36rem / 16);
+
+    /* designed to fit an example estimated to have had viewport height of 668 */
+    /* if viewport example is 1451 and user is assumed to use a monitor with widescreen 16:9 and bookmarks-bar and adress-bar showing 80–120px, windows taskbar 40–50px. I calculated height ratio for viewport to be approx 668px, so I will use that when calculating the vh */
+    --viewportheight: 668;
 }
 
 html {
@@ -36,14 +41,14 @@ nav {
     /* 85/16=5.3125rem, 31/16=1.9375rem */
     /* 85/16=5.3125rem, 31/16=1.9375rem */
     /* 31/1451*100=2.1365vw */
-    /* if viewport example is 1451 and user is assumed to use a monitor with widescreen 16:9 and bookmarks-bar and adress-bar showing 80–120px, windows taskbar 40–50px. I calculated height ratio for viewport to be approx 668px, so I will use that when calculating the vh */
-    /* height-size of full webpage in Figma 1901px */
     margin-left: min(2.1365vw, calc(31rem / 16));
     margin-right: min(2.1365vw, calc(31rem / 16));
-    background-color: white;
+    background-color: var(--fourth-color);
+    border: 1px solid var(--fifth-color);
+    /* spread must be in px according to w3schools */
+    filter: drop-shadow(calc(1rem / 16) calc(1rem / 16) 1px #DCDCDC);
     display: flex;
     justify-content: center;
-    outline: 2px solid green;
     gap:min(7.5120vw, calc(109rem/16));
 }
 
@@ -53,18 +58,25 @@ header {
         /* padding-top:calc(70rem / 16); */
         /* 70/668px*100=10.4790 */
     padding-top: 10.4790vh;
+
+    /* since this is an image all the pixels should be shown */
     height: calc(930rem/16);
     background-image: url("/images/headerbackground2000x1282.jpg");
     background-repeat: no-repeat;
     background-size: cover;
     background-position-y: top;
     background-position: center;
-    outline:2px solid hotpink;
 }
 
 a {
+    /* min-height: calc(85vh/var(--viewportheight)*100); */
+    /* min-height: calc(85rem/16); */
+    /* (85/2)-16=26.5px */
+    padding-top: calc(26.5vh/var(--viewportheight)*100);
+    padding-bottom: calc(26.5vh/var(--viewportheight)*100);
     color:var(--blackish-color);
     text-decoration: none;
+    vertical-align: middle;
 }
 
 a:hover {
