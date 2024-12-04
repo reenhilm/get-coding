@@ -1,6 +1,7 @@
 /* Deklarera CSS-variabler i :root */
 :root {
     --blackish-color: #101212;
+    --trueblack-color: #000000;
     --secondary-color: blue;
     --third-color: 161, 0, 0;
     --fourth-color: #F8F8F8;
@@ -8,6 +9,7 @@
     --sixth-color: blue;
     --seventh-color: #587291;
     --eighth-color: #5B2E48;
+    --ninth-color: #DCDCDC;
     --font-family: 'Open Sans', sans-serif;
     /* --font-size-base: 16px; */
 
@@ -53,7 +55,7 @@ header nav {
     margin-right: min(2.1365vw, calc(31rem / 16));
     border: 1px solid var(--fifth-color);
     /* spread must be in px according to w3schools */
-    filter: drop-shadow(calc(1rem / 16) calc(1rem / 16) 1px #DCDCDC);
+    filter: drop-shadow(calc(1rem / 16) calc(1rem / 16) 21px 0px var(--ninth-color));
     justify-content: center;
     gap:min(7.5120vw, calc(109rem/16));
 }
@@ -130,4 +132,6 @@ button {
     font-size: var(--font-size-xl);
     background-color: var(--eighth-color);
     margin-bottom: min(calc(420vh/var(--viewportheight)*100), calc(420rem/16));
+    border-radius: calc(10rem / 16);
+    filter: drop-shadow(0 calc(4rem / 16) 4px 0 var(--trueblack-color));
 }
