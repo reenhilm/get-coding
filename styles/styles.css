@@ -55,7 +55,7 @@ header nav {
     margin-right: min(2.1365vw, calc(31rem / 16));
     border: 1px solid var(--fifth-color);
     /* spread must be in px according to w3schools */
-    filter: drop-shadow(calc(1rem / 16) calc(1rem / 16) 21px 0px var(--ninth-color));
+    box-shadow: calc(1rem / 16) calc(1rem / 16) 21px 0px var(--ninth-color);
     justify-content: center;
     gap:min(7.5120vw, calc(109rem/16));
 }
@@ -133,5 +133,5 @@ button {
     background-color: var(--eighth-color);
     margin-bottom: min(calc(420vh/var(--viewportheight)*100), calc(420rem/16));
     border-radius: calc(10rem / 16);
-    filter: drop-shadow(0 calc(4rem / 16) 4px 0 var(--trueblack-color));
+    box-shadow: 0 calc(4rem / 16) 4px 0 var(--trueblack-color);
 }
