@@ -46,11 +46,8 @@ nav {
 }
 
 header > nav {
-    /* measured */
     /* viewport in figma was 1451px wide */
     /* this element should be height 85px, margin 31px in Figma by that viewport size */
-    /* 85/16=5.3125rem, 31/16=1.9375rem */
-    /* 85/16=5.3125rem, 31/16=1.9375rem */
     /* 31/1451*100=2.1365vw */
     margin-inline: min(2.1365vw, calc(31rem / 16));
     border: 1px solid var(--fifth-color);
@@ -61,7 +58,6 @@ header > nav {
 }
 
 footer > nav {
-    /* measured */
     font-size: var(--font-size-xl);
     justify-content:flex-end;
     
@@ -76,11 +72,7 @@ footer > nav {
 }
 
 header {
-    /* measured */
-    /* padding 70px */
-    
-        /* padding-top:calc(70rem / 16); */
-        /* 70/668px*100=10.4790 */
+    /* padding 70px */ 
     padding-top: min(calc(70vh/var(--viewportheight)*100), calc(70rem/16));
 
     /* since this is an image all the pixels should be shown */
@@ -126,7 +118,6 @@ section h1 {
 }
 
 button {
-    /* measured */
     /* choosing almost white even though I know it is #FFFFFF in Figma */    
     /* -10 height   -11 bottom  -6 left  -4 right */
     /* 22 height 22 bottom     33 left 41 right  */
