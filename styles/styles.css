@@ -45,32 +45,38 @@ nav {
     display: flex;
 }
 
-header nav {
+header > nav {
+    /* measured */
     /* viewport in figma was 1451px wide */
     /* this element should be height 85px, margin 31px in Figma by that viewport size */
     /* 85/16=5.3125rem, 31/16=1.9375rem */
     /* 85/16=5.3125rem, 31/16=1.9375rem */
     /* 31/1451*100=2.1365vw */
-    margin-left: min(2.1365vw, calc(31rem / 16));
-    margin-right: min(2.1365vw, calc(31rem / 16));
+    margin-inline: min(2.1365vw, calc(31rem / 16));
     border: 1px solid var(--fifth-color);
     /* spread must be in px according to w3schools, when using 4 parameters 3:rd one is blur, when using 5 4:th one is spread */
     box-shadow: calc(1rem / 16) calc(1rem / 16) 21px var(--ninth-color);
     justify-content: center;
-    gap:min(7.5120vw, calc(109rem/16));
+    gap:min(7.4431vw, calc(108rem/16));
 }
 
-footer nav {
+footer > nav {
+    /* measured */
     font-size: var(--font-size-xl);
     justify-content:flex-end;
-
-    /* if 10px-font on Figma is 30px font, then margin 9px should be 27px */
-    gap: min(1.7521vw, calc(27rem/16));
+    
+    gap: min(1.5161vw, calc(22rem/16));
     /* 40px from right */
-    margin:min(2.5957vw, calc(40rem/16));
+    margin-right: min(6.6850vw, calc(97rem/16));
+    padding-bottom:0px;
+    line-height:30px;
+    /* margin-bottom should be 70px but a already has 14,372px padding-bottom */
+    margin-top: min(calc(55.628vh/var(--viewportheight)*100), calc(55.628rem/16)) ;
+    margin-bottom: min(calc(55.628vh/var(--viewportheight)*100), calc(55.628rem/16));
 }
 
 header {
+    /* measured */
     /* padding 70px */
     
         /* padding-top:calc(70rem / 16); */
@@ -87,11 +93,9 @@ header {
 }
 
 a {
-    /* min-height: calc(85vh/var(--viewportheight)*100); */
-    /* min-height: calc(85rem/16); */
-    /* (85/2)-16=26.5px */
-    padding-top: min(calc(26.5vh/var(--viewportheight)*100), calc(26.5rem/16));
-    padding-bottom: min(calc(26.5vh/var(--viewportheight)*100), calc(26.5rem/16));
+    /* (85/2)-24*1.172=14.372px ska bli 49px */
+    padding-top: min(calc(14.372vh/var(--viewportheight)*100), calc(14.372rem/16));
+    padding-bottom: min(calc(14.372vh/var(--viewportheight)*100), calc(14.372rem/16));
     color:var(--blackish-color);
     text-decoration: none;
     vertical-align: middle;
@@ -113,25 +117,28 @@ section {
 
 section h1 {
     /* choosing almost white even though I know it is #FFFFFF in Figma */
-    /* approx 21px*3 padding below, approx 142px*3 padding above */
     color: var(--fourth-color);
     font-size: var(--font-size-2xl);
-    padding-top: min(calc(426vh/var(--viewportheight)*100), calc(426rem/16));
-    padding-bottom: min(calc(63vh/var(--viewportheight)*100), calc(63rem/16));
+    /* 327px-8px=319 */
+    padding-top: min(calc(319vh/var(--viewportheight)*100), calc(319rem/16));
+    /* 48px-17px=31 */
+    padding-bottom:min(calc(31vh/var(--viewportheight)*100), calc(31rem/16));
 }
 
 button {
-    /* choosing almost white even though I know it is #FFFFFF in Figma */
-    /* 67px height, 216px wide, approx padding top/bottom 10px*3 sides 14px*3 */
-    /* 140px*3 margin below */
-    padding-top: min(calc(30vh/var(--viewportheight)*100), calc(30rem/16));
-    padding-bottom: min(calc(30vh/var(--viewportheight)*100), calc(30rem/16));
-    padding-left: min(2.7255vw, calc(42rem / 16));
-    padding-right: min(2.7255vw, calc(42rem / 16));
+    /* measured */
+    /* choosing almost white even though I know it is #FFFFFF in Figma */    
+    /* -10 height   -11 bottom  -6 left  -4 right */
+    /* 22 height 22 bottom     33 left 41 right  */
+
+    padding-top: min(calc(12vh/var(--viewportheight)*100), calc(12rem/16));
+    padding-bottom: min(calc(11vh/var(--viewportheight)*100), calc(11rem/16));
+    padding-left: min(1.8608vw, calc(27rem / 16));
+    padding-right: min(2.55vw, calc(37rem / 16));
     color: var(--fourth-color);
     font-size: var(--font-size-xl);
     background-color: var(--eighth-color);
-    margin-bottom: min(calc(420vh/var(--viewportheight)*100), calc(420rem/16));
+    margin-bottom: min(calc(327vh/var(--viewportheight)*100), calc(327rem/16));
     border-radius: calc(10rem / 16);
     box-shadow: 0 calc(4rem / 16) 4px var(--trueblack-color);
 }
